@@ -52,8 +52,11 @@ async def main():
             await asyncio.sleep(INTERVAL)
     return result
 
-try:
-    asyncio.run(main())
-    print(f"::set-output name=status::success")
-except:
-    print(f"::set-output name=status::failure")
+
+if __name__ == "__main__":
+    try:
+        asyncio.run(main())
+        print("::set-output name=status::success")
+    except:
+        print("::set-output name=status::failure")
+        raise
