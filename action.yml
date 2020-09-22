@@ -1,0 +1,20 @@
+name: 'Wait for commit statuses'
+description: 'Wait for commit statuses to be either successful or failed'
+branding:
+  icon: 'clock'
+  color: 'orange'
+inputs:
+  ignoreContexts:
+    description: 'CSV of status contexts to ignore'
+    required: false
+    default: ''
+  checkInterval:
+    description: 'Time between checks (in seconds)'
+    required: false
+    default: 10
+outputs:
+  status:
+    description: 'Success or failure'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
