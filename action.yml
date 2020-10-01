@@ -1,5 +1,5 @@
 name: 'Wait for commit statuses'
-description: 'Wait for commit statuses to be either successful or failed'
+description: 'Wait for commit statuses and check runs to be either successful or failed'
 branding:
   icon: 'clock'
   color: 'orange'
@@ -8,10 +8,14 @@ inputs:
     description: 'CSV of status contexts to ignore'
     required: false
     default: ''
+  ignoreActions:
+    description: 'CSV of Actions to ignore'
+    required: false
+    default: ''
   checkInterval:
     description: 'Time between checks (in seconds)'
     required: false
-    default: 10
+    default: '10'
 outputs:
   status:
     description: 'Success or failure'
