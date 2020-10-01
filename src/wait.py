@@ -9,10 +9,10 @@ from asgiref.sync import sync_to_async
 from github import Github
 
 REPOSITORY = os.environ["GITHUB_REPOSITORY"]
-TOKEN = os.environ["GITHUB_TOKEN"]
 SHA = os.environ["GITHUB_SHA"]
 EVENT = os.environ["GITHUB_EVENT_NAME"]
 EVENT_PATH = os.environ["GITHUB_EVENT_PATH"]
+TOKEN = os.environ["INPUT_GITHUBTOKEN"]
 IGNORECONTEXTS = os.environ["INPUT_IGNORECONTEXTS"].split(',')
 IGNOREACTIONS = os.environ["INPUT_IGNOREACTIONS"].split(',')
 INTERVAL = float(os.environ["INPUT_CHECKINTERVAL"])
