@@ -26,7 +26,7 @@ async def poll_checks(session, repo, ref):
         "Content-Type": "application/vnd.github.antiope-preview+json",
         "Authorization": f"token {TOKEN}",
     }
-    url = f"/repos/{repo}/commits/{ref}/check-runs"
+    url = f"https://api.github.com/repos/{repo}/commits/{ref}/check-runs"
 
     async with session.get(url, headers=headers, raise_for_status=True) as resp:
         data = await resp.json()
